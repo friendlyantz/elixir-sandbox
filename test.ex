@@ -35,7 +35,6 @@ IO.inspect(
   { 2, 1, 3, 3, :atom, true, 'string', [1, 2, 3] }
 )
 
-
 # Maps
 
 map = %{
@@ -47,7 +46,22 @@ map = %{
 IO.inspect( map["B"] )
 IO.inspect( map.c )
 
-# Pattern matching
+# Operators
+
+true and true
+true && false
+
+1 === 1.0 # false
+1 == 1.0 # true
+1 !== 1.0 # true
+1 != 1.0 # false
+
+11 > 1
+
+# Membership operators
+
+1 in [1, 2, 3]
+0 not in [1, 2, 3]
 
 case {1, 2, 3} do
   {1, x, 3} -> IO.puts("Second element is #{x}")
