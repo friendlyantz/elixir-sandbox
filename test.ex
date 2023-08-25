@@ -63,6 +63,31 @@ true && false
 1 in [1, 2, 3]
 0 not in [1, 2, 3]
 
+# PATTERN MATCHING
+
+x = 1 # it will assign a value
+1 = x # 1. compare right to left
+0 = x # MatchError
+
+{a, b, c} = {1, 2, 3}
+{:ok, result} = {:ok, "success"}
+{:ok, "failure"} = {:ok, result} # MatchError
+
+## Pin operator
+
+x = 2 # reassigns
+^x = 1 # MatchError
+
+{:ok, ^result} = {:ok, "success"}
+{:ok, ^result} = {:ok, "failure"} # MatchError
+
+## Underscore - discard
+
+{a, _, c} = {1, 2, 3}
+{a, _, _ } = {1, 2} # MatchError
+
+
+
 case {1, 2, 3} do
   {1, x, 3} -> IO.puts("Second element is #{x}")
   _ -> IO.puts("No match")
