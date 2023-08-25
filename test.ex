@@ -11,16 +11,31 @@ IO.puts("""
 piped_result = "Elixir" |> String.graphemes() |> Enum.frequencies()
 IO.inspect(piped_result)
 
-defmodule MyModule do
+defmodule MyModule.Sub do
+  @moduledoc """
+  This is a module documentation
+  """
+  @name "Anton"
+
+  @doc """
+  This is a function. Docs  discarded for private functions
+  """
   def my_function(a, b) do
+    my_private_function()
+
     %{values: a..b}
     |> Map.get(:values)
     |> Enum.map(&(&1 * 2))
     |> Enum.sum()
   end
+
+  defp my_private_function() do
+    IO.puts("This is private. Hello #{@name}")
+  end
 end
 
-IO.inspect(MyModule.my_function(1, 5))
+
+IO.inspect(MyModule.Sub.my_function(1, 5))
 
 # Lists
 
