@@ -11,11 +11,23 @@ IO.puts("""
 piped_result = "Elixir" |> String.graphemes() |> Enum.frequencies()
 IO.inspect(piped_result)
 
+defmodule ExtModule.Result do
+  def add(a, b) do
+    "Your result is #{a + b}"
+  end
+
+end
+
 defmodule MyModule.Sub do
+  alias ExtModule.Sub, as: MyAlias
+
   @moduledoc """
   This is a module documentation
   """
   @name "Anton"
+
+  defstruct [:name, :age] # nil by default
+  # defstruct name: "Anton", age: 30
 
   @doc """
   This is a function. Docs  discarded for private functions
