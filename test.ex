@@ -67,28 +67,49 @@ true && false
 
 x = 1 # it will assign a value
 1 = x # 1. compare right to left
-0 = x # MatchError
+# 0 = x # MatchError
 
-{a, b, c} = {1, 2, 3}
+# {a, b, c} = {1, 2, 3}
+
 {:ok, result} = {:ok, "success"}
-{:ok, "failure"} = {:ok, result} # MatchError
+# {:ok, "failure"} = {:ok, result} # MatchError
 
 ## Pin operator
 
-x = 2 # reassigns
-^x = 1 # MatchError
+# x = 2 # reassigns
+# ^x = 1 # MatchError
 
 {:ok, ^result} = {:ok, "success"}
-{:ok, ^result} = {:ok, "failure"} # MatchError
+# {:ok, ^result} = {:ok, "failure"} # MatchError
 
 ## Underscore - discard
 
-{a, _, c} = {1, 2, 3}
-{a, _, _ } = {1, 2} # MatchError
+{_, c} = {1, 2}
+IO.puts(c)
+# {a, _, _ } = {1, 2} # MatchError
 
-
-
-case {1, 2, 3} do
+result = {1, 2, 3}
+case result do
   {1, x, 3} -> IO.puts("Second element is #{x}")
   _ -> IO.puts("No match")
+end
+
+# CONDITIONALS
+
+color = "red"
+if color == "red", do: IO.puts("Red"), else: IO.puts("Not red")
+
+cond do
+  color == "red" -> IO.puts("Red cond")
+  color == "blue" -> IO.puts("Blue cond")
+  true -> IO.puts("Not red or blue") # default else
+end
+
+success = {:ok, "Success"}
+error = {:error, "Error"}
+
+with {:ok, _result } <- success, {:error, "Not Error" } <- error do
+    IO.puts "This gets executed"
+else
+  {:error, _result } -> IO.puts "ELSE gets executed"
 end
