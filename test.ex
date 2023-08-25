@@ -113,3 +113,25 @@ with {:ok, _result } <- success, {:error, "Not Error" } <- error do
 else
   {:error, _result } -> IO.puts "ELSE gets executed"
 end
+
+# Anonymous functions
+
+sum = fn (a, b) -> a + b end
+IO.puts(sum.(1, 2)) # note the dot
+
+sum = &( &1 + &2 ) # shorthand
+IO.puts(sum.(2, 3)) # note the dot
+
+
+say_hi = fn name -> IO.puts("Hi#{name}") end
+say_hi.(" John")
+
+say_hey = &( IO.puts("Hey #{&1}") )
+say_hey.("Tony")
+
+handle_result = fn
+  {:ok, result} -> IO.puts("Success is: #{result}")
+  {:error, error} -> IO.puts("Error: #{error}")
+end
+
+handle_result.( {:ok, "Success"} )
