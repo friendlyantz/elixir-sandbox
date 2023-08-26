@@ -23,8 +23,14 @@ mix archive.install hex phx_new
 
 ```sh
 mix new project_name && cd $_
-mix phx.new project_name --no-ecto # db setting
-mix phx.new live_view_project_name --live
+mix phx.new project_name --no-ecto # skip db setup
+mix phx.new live_view_project_name --live # live view
+```
+
+Run server
+```sh
+mix phx.server
+iex -S mix phx.server
 ```
 
 # Phoenix
