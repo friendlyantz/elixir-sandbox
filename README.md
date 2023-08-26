@@ -35,6 +35,9 @@ skip test
 ```sh
 @tag :skip
 ```
+# Phoenix LiveView SPA
+
+![image](https://github.com/friendlyantz/elixir-sandbox/assets/70934030/e3e60425-4779-4072-9e72-b09ed32f8fe7)
 
 ## Misc Notes
 
