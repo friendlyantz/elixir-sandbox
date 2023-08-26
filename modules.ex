@@ -53,3 +53,19 @@ Enum.random 1..6
 Enum.uniq [1,1,2,34,3,3,2]
 Enum.take_random [1,1,2,34,3,3,2], 2
 Enum.join [1,1,2,34,3,3,2], "-"
+
+# Kernel
+
+length [1,2,3] # list only
+trunc 11.4
+rem 7,2 # 1 (modulo?)
+is_nil nil
+is_atom :atom
+### but
+is_bitstring("string") # true
+
+hd [2, "a", :last] # retuerns 2 # - head
+ceil 1.2 # 2, altr to floor
+div 7, 2 # 3
+
+to_string :atom
