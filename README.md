@@ -17,6 +17,11 @@ mix archive.install hex phx_new
 ```
 https://hexdocs.pm/phoenix/installation.html```
 
+### Create a new project
+
+```sh
+mix new phoenix_keygen_htmx && cd $_
+```
 ## Misc Notes
 
 in `iex` returns -12th return results like '_' in ruby, but you can specify the result pointer
