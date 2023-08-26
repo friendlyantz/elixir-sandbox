@@ -40,12 +40,11 @@ defmodule PhoenixKeygenHtmxTest do
     assert {:error, "no length given"} = PhoenixKeygenHtmx.generate(options)
   end
 
-  @tag :skip
   test "returns error when length is not an int" do
     options = %{
       "length" => "ab"
     }
 
-    assert {:error, _error} = PhoenixKeygenHtmx.generate(options)
+    assert {:error, "invalid type, should be Integer"} = PhoenixKeygenHtmx.generate(options)
   end
 end

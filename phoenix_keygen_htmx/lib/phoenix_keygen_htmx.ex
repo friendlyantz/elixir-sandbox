@@ -1,3 +1,5 @@
+require IEx
+
 defmodule PhoenixKeygenHtmx do
   # specify that options is a map
   # specify specific keys and their types
@@ -5,11 +7,18 @@ defmodule PhoenixKeygenHtmx do
   @spec generate(options :: map()) :: {:ok, bitstring()} | {:error, bitstring()}
 
   def generate(options) do
-    # require IEx
-    # IEx.pry
+    contains_length? = Map.has_key?(options, "length")
+    validate_length(contains_length?, options)
+  end
 
-    unless Map.has_key?(options, "length") do
-      {:error, "no length given"}
+  defp validate_length(false, _options) do
+    # IEx.pry()
+    {:error, "no length given"}
+  end
+
+  defp validate_length(true, options) do
+    unless is_integer(options["length"]) do
+      {:error, "invalid type, should be Integer"}
     else
       {:ok, "Hey"}
     end
