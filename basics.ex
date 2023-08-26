@@ -13,13 +13,16 @@ IO.inspect(piped_result)
 
 defmodule ExtModule.Result do
   def add(a, b) do
-    IO.puts "Your result is #{a + b} from ExtModule"
+    "Your result is #{a + b} from ExtModule"
   end
 
 end
 
 defmodule MyModule.Sub do
   alias ExtModule.Result, as: MyAlias
+  # alias ExtModule.{Result, SomeOtherModule}
+
+  # import SomeOtherModule, only: [some_function: 1] # 1 arity for this function
 
   @moduledoc """
   This is a module documentation
