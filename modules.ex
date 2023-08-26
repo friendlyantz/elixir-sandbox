@@ -54,6 +54,11 @@ Enum.uniq [1,1,2,34,3,3,2]
 Enum.take_random [1,1,2,34,3,3,2], 2
 Enum.join [1,1,2,34,3,3,2], "-"
 
+Enum.map(?a..?z, & <<&1>>)
+# ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o",
+#  "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+
+
 # Kernel
 
 length [1,2,3] # list only
