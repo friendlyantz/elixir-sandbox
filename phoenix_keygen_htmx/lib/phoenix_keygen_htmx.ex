@@ -1,18 +1,14 @@
 defmodule PhoenixKeygenHtmx do
-  @moduledoc """
-  Documentation for `PhoenixKeygenHtmx`.
-  """
 
-  @doc """
-  Hello world.
+  # specify that options is a map
+  # specify specific keys and their types
+  # this only works with code analysis tools
+  @spec generate(options :: map()) :: {:ok, bitstring()} | {:error, bitstring()}
 
-  ## Examples
+  def generate(options) do
+    # require IEx
+    # IEx.pry
 
-      iex> PhoenixKeygenHtmx.hello()
-      :world
-
-  """
-  def hello do
-    :world
+    {:ok, "Hey"}
   end
 end

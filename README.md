@@ -15,13 +15,25 @@ Upd `hex` package manager and then install `phx_new` archive
 mix local.hex
 mix archive.install hex phx_new
 ```
-https://hexdocs.pm/phoenix/installation.html```
+<https://hexdocs.pm/phoenix/installation.html```>
 
 ### Create a new project
 
 ```sh
 mix new phoenix_keygen_htmx && cd $_
 ```
+
+# Testing
+
+```sh
+mix test
+```
+
+skip test
+```sh
+@tag :skip
+```
+
 ## Misc Notes
 
 in `iex` returns -12th return results like '_' in ruby, but you can specify the result pointer
