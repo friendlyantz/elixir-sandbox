@@ -1,5 +1,11 @@
 # Counter
 
+## Setup
+```bash
+mix phx.server
+```
+got to http://localhost:4000/counter
+## Notes
 refer https://hexdocs.pm/phoenix_live_view/welcome.html
 
 > Note: this reminds me a bit oh HTMX

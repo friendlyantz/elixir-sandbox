@@ -27,9 +27,15 @@ mix phx.new project_name --no-ecto # skip db setup
 mix phx.new live_view_project_name --live # live view
 ```
 
-Run server
+## Run server
+
+use `make`
+
+OR
 ```sh
-mix phx.server
+mix deps.get # install dependencies
+
+mix phx.server # run server
 iex -S mix phx.server
 ```
 
