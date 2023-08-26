@@ -1,4 +1,7 @@
 elixir projects arranged in subfolders
+- `counter` - LiveView Demo. refer readme
+- `pacman` - WIP TDD RyanBigg's Toy Robot book / challange
+- `keygen` - TDDing Keygen module with validations as per YouTube(incomple/abandoned due to poor tutorial content)
 
 # Dependencies Installation
 
