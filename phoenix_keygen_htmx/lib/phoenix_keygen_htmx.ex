@@ -20,10 +20,15 @@ defmodule PhoenixKeygenHtmx do
 
   defp validate_int_type(false, _options), do: {:error, "invalid type, should be Integer"}
 
-  defp validate_int_type(true, _options) do
+  defp validate_int_type(true, options) do
+    bool_values? =
+      Map.delete(options, "length")
+      |> Enum.all?(fn {_, value} -> is_boolean(value) end)
 
-    IEx.pry()
-    validate_options_type(values)
-    {:ok, "Hey"}
+    validate_options_type(bool_values?, options)
   end
+
+  defp validate_options_type(false, _options), do: {:error, "invalid type, should be Bool"}
+
+  defp validate_options_type(true, _options), do: {:ok, "Hey"}
 end

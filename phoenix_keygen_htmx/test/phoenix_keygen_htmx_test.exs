@@ -47,4 +47,15 @@ defmodule PhoenixKeygenHtmxTest do
 
     assert {:error, "invalid type, should be Integer"} = PhoenixKeygenHtmx.generate(options)
   end
+
+  test "returns error when options are non-bool" do
+    options = %{
+      "length" => 12,
+      "uppercase" => false,
+      "numbers" => "not a bool",
+      "symbols" => false
+    }
+
+    assert {:error, "invalid type, should be Bool"} = PhoenixKeygenHtmx.generate(options)
+  end
 end
