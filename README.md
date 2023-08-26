@@ -19,11 +19,17 @@ mix archive.install hex phx_new
 ```
 <https://hexdocs.pm/phoenix/installation.html```>
 
-### Create a new project
+# Create a new project
 
 ```sh
-mix new phoenix_keygen_htmx && cd $_
+mix new project_name && cd $_
+mix phx.new project_name --no-ecto # db setting
+mix phx.new live_view_project_name --live
 ```
+
+# Phoenix
+
+https://github.com/phoenixframework/phoenix_live_view
 
 # Testing
 
@@ -37,7 +43,7 @@ skip test
 ```
 # Phoenix LiveView SPA
 
-![image](https://github.com/friendlyantz/elixir-sandbox/assets/70934030/e3e60425-4779-4072-9e72-b09ed32f8fe7)
+![image](https://github.com/friendlyantz/elixir-sandbox/assets/70934030/8bce8764-be8d-49e7-bf66-8b4dd57739ce)
 
 ## Misc Notes
 
