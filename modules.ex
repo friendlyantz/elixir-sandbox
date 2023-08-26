@@ -23,3 +23,33 @@ end
 
 # Alphabet.letter(:letter) # error
 IO.puts Alphabet.letter(:z)
+
+# built in modules
+
+Integer.to_string(123)
+String.upcase("anton")
+String.contains?("antoN", "T")
+String.split("antoN", "t")
+# ["an", "oN"]
+String.split("fortuna favours the bold")
+l = [1, 2, 3]
+List.last l
+List.to_string ["a", "b", "c"]
+
+## Map
+
+m = %{:a => "a", "b" => "B"}
+Map.put(m, :c, "c")
+# Map.put_new(m, :c, "c")
+
+## Enum
+
+Enum.each(l, fn x -> IO.puts x end)
+Enum.all?(l, fn x -> is_integer(x) end)
+Enum.any?(l, fn x -> is_integer(x) end)
+Enum.filter(l, fn x -> x === 2 end)
+Enum.to_list m
+Enum.random 1..6
+Enum.uniq [1,1,2,34,3,3,2]
+Enum.take_random [1,1,2,34,3,3,2], 2
+Enum.join [1,1,2,34,3,3,2], "-"
