@@ -37,3 +37,5 @@ defmodule CounterWeb.CounterLive do
 end
 
 ```
+
+![image](https://github.com/friendlyantz/elixir-sandbox/assets/70934030/3a50547d-73a3-4aae-b0bf-72f08580ba62)
