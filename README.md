@@ -1,4 +1,6 @@
-# Installation
+elixir projects arranged in subfolders
+
+# Dependencies Installation
 
 ```sh
 # do the same for erlang if required

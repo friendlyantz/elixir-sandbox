@@ -2,6 +2,7 @@ defmodule PhoenixKeygenHtmxTest do
   use ExUnit.Case
   doctest PhoenixKeygenHtmx
 
+  # test prep, similaar to `let` and `before` in RSpec
   setup do
     options = %{
       "length" => 16,
@@ -27,26 +28,24 @@ defmodule PhoenixKeygenHtmxTest do
     }
   end
 
-    test "returns a string", %{result: result} do
-      assert is_bitstring(result)
-    end
+  test "returns a string", %{result: result} do
+    assert is_bitstring(result)
+  end
 
-    @tag :skip
-    test "returns error when no length is given" do
-      options = %{
-        "invalid" => false,
-      }
+  test "returns error when no length is given" do
+    options = %{
+      "invalid" => false
+    }
 
-      assert {:error, _error} = PhoenixKeygenHtmx.generate(options)
-    end
+    assert {:error, "no length given"} = PhoenixKeygenHtmx.generate(options)
+  end
 
-    @tag :skip
-    test "returns error when length is not an int" do
-      options = %{
-        "length" => "ab",
-      }
+  @tag :skip
+  test "returns error when length is not an int" do
+    options = %{
+      "length" => "ab"
+    }
 
-      assert {:error, _error} = PhoenixKeygenHtmx.generate(options)
-    end
-
+    assert {:error, _error} = PhoenixKeygenHtmx.generate(options)
+  end
 end
