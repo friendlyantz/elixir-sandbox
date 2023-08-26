@@ -1,6 +1,6 @@
-defmodule PhoenixKeygenHtmxTest do
+defmodule KeygenTest do
   use ExUnit.Case
-  doctest PhoenixKeygenHtmx
+  doctest Keygen
 
   # test prep, similaar to `let` and `before` in RSpec
   setup do
@@ -20,7 +20,7 @@ defmodule PhoenixKeygenHtmxTest do
 
     # ===============
     # Assign a result
-    {:ok, result} = PhoenixKeygenHtmx.generate(options)
+    {:ok, result} = Keygen.generate(options)
 
     %{
       options_type: options_type,
@@ -37,7 +37,7 @@ defmodule PhoenixKeygenHtmxTest do
       "invalid" => false
     }
 
-    assert {:error, "no length given"} = PhoenixKeygenHtmx.generate(options)
+    assert {:error, "no length given"} = Keygen.generate(options)
   end
 
   test "returns error when length is not an int" do
@@ -45,7 +45,7 @@ defmodule PhoenixKeygenHtmxTest do
       "length" => "ab"
     }
 
-    assert {:error, "invalid type, should be Integer"} = PhoenixKeygenHtmx.generate(options)
+    assert {:error, "invalid type, should be Integer"} = Keygen.generate(options)
   end
 
   test "returns error when options are non-bool" do
@@ -56,6 +56,6 @@ defmodule PhoenixKeygenHtmxTest do
       "symbols" => false
     }
 
-    assert {:error, "invalid type, should be Bool"} = PhoenixKeygenHtmx.generate(options)
+    assert {:error, "invalid type, should be Bool"} = Keygen.generate(options)
   end
 end

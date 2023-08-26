@@ -1,9 +1,9 @@
-defmodule PhoenixKeygenHtmx.MixProject do
+defmodule Keygen.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :phoenix_keygen_htmx,
+      app: :keygen,
       version: "0.1.0",
       elixir: "~> 1.15",
       start_permanent: Mix.env() == :prod,

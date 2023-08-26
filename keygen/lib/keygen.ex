@@ -1,6 +1,6 @@
 require IEx
 
-defmodule PhoenixKeygenHtmx do
+defmodule Keygen do
   # specify that options is a map
   # specify specific keys and their types
   # this only works with code analysis tools
