@@ -1,18 +1,33 @@
 # Counter
 
-To start your Phoenix server:
+refer https://hexdocs.pm/phoenix_live_view/welcome.html
 
-  * Run `mix setup` to install and setup dependencies
-  * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
+> Note: this reminds me a bit oh HTMX
+```elixir
+# router
+live "/counter", CounterLive
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+# create /lib/counter_web/live/counter_live.ex
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+defmodule CounterWeb.CounterLive do
+  use Phoenix.LiveView
 
-## Learn more
+  def mount(_params, _session, socket) do # _params is new
+    {:ok, assign(socket, count: 0)}
+  end
 
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+  def render(assigns) do
+    # sigil
+    ~L"""
+    <div class="container">
+      <h1>Count: <%= @count %></h1>
+      <button>+</button>
+      <button>-</button>
+      <!-- <button phx-click="increment">Increment</button> -->
+    </div>
+    """
+  end
+
+end
+
+```
