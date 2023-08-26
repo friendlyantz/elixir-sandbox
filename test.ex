@@ -13,13 +13,13 @@ IO.inspect(piped_result)
 
 defmodule ExtModule.Result do
   def add(a, b) do
-    "Your result is #{a + b}"
+    IO.puts "Your result is #{a + b} from ExtModule"
   end
 
 end
 
 defmodule MyModule.Sub do
-  alias ExtModule.Sub, as: MyAlias
+  alias ExtModule.Result, as: MyAlias
 
   @moduledoc """
   This is a module documentation
@@ -33,6 +33,8 @@ defmodule MyModule.Sub do
   This is a function. Docs  discarded for private functions
   """
   def my_function(a, b) do
+    MyAlias.add(2, 5)
+
     my_private_function()
 
     %{values: a..b}
