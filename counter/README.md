@@ -1,6 +1,16 @@
 # Counter
 
 ## Setup
+
+use `make`
+```sh
+make install
+make run
+make open_web
+```
+
+OR
+
 ```bash
 mix phx.server
 ```
