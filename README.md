@@ -1,5 +1,6 @@
 elixir projects arranged in subfolders
 - `counter` - LiveView Demo. refer readme / Makefile
+- `chat` - LiveView Chat(WIP) with DB. refer readme / Makefile
 - `pacman` - WIP TDD RyanBigg's Toy Robot book / challange
 - `keygen` - TDDing Keygen module with validations as per YouTube(incomple/abandoned due to poor tutorial content)
 
