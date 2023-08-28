@@ -2,8 +2,8 @@ import Config
 
 # Configure your database
 config :chirp, Chirp.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "friendlyantz",
+  password: "1",
   hostname: "localhost",
   database: "chirp_dev",
   stacktrace: true,
