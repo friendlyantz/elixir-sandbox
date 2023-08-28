@@ -40,7 +40,8 @@ OR
 mix deps.get # install dependencies
 
 mix phx.server # run server
-iex -S mix phx.server
+# or
+iex -S mix phx.server # run server in iex
 ```
 
 # Phoenix

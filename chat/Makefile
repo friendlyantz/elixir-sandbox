@@ -23,7 +23,7 @@ install:
 
 .PHONY: run
 run:
-	mix phx.server
+	iex -S mix phx.server
 
 .PHONY: open_web
 open_web:
