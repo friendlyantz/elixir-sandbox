@@ -15,6 +15,11 @@ apt install inotify-tools
 
 # Dev Notes
 
+to create a new project
+```sh
+mix phx.new chat --live
+```
+
 - Using Tailwind which works fantaastic out of the box
 - Added `MnemonicSlugs` package to generate random names
 ```elixir

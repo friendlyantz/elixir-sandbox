@@ -1,20 +1,9 @@
 defmodule ChatWeb.ChatLive do
   use Phoenix.LiveView
 
-  def mount(_params, _session, socket) do
-    socket = assign(socket, count: 0, chat_one: "lala")
+  def mount(%{"id" => room_id}, _session, socket) do # using pattern matching to get the room_id, instead of just using params
+    socket = assign(socket, room_id: room_id)
     {:ok, socket}
   end
 
-  def handle_event("increment", _, socket) do
-    count = socket.assigns.count + 1
-    socket = assign(socket, count: count)
-    {:noreply, socket}
-  end
-
-  def handle_event("decrement", _, socket) do
-    count = socket.assigns.count - 1
-    socket = assign(socket, count: count)
-    {:noreply, socket}
-  end
 end
