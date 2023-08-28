@@ -27,7 +27,7 @@ run:
 
 .PHONY: open_web
 open_web:
-	open http://127.0.0.1:${PORT}/counter
+	open http://127.0.0.1:${PORT}/
 
 .PHONY: usage
 usage:
