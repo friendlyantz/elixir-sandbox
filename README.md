@@ -50,6 +50,28 @@ iex -S mix phx.server # run server in iex
 
 https://github.com/phoenixframework/phoenix_live_view
 
+## Inline templating HEEX / LEEX. and @ vs assigns
+
+```elixir
+
+# ~H""" - HEEX (preferred, strict, has checks)
+# ~L""" - LEEX
+# but I was only able to include vaiadles into CSS using LEEX only
+style="width: <%= @brightness %>%;">
+
+def render(assigns) do
+  ~H""" 
+  <div class="container">
+    <%= @brightness %>
+    <%!-- OR assigns.brightness --%>
+    ...
+  </div>
+  """
+end
+
+
+```
+
 # Testing
 
 ```sh
