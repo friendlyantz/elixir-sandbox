@@ -7,6 +7,13 @@
   </:actions>
 </.header>
 
+<%!-- <div id="posts">
+  <%= for post <- @streams.posts do %>
+  <%= live_component @socket, ChirpWeb.PostLive.PostComponent, id: post.id, post: post %>
+  <% end %>
+</div>
+ --%>
+
 <.table
   id="posts"
   rows={@streams.posts}

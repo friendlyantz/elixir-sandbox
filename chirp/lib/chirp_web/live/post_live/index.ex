@@ -6,6 +6,7 @@ defmodule ChirpWeb.PostLive.Index do
 
   @impl true
   def mount(_params, _session, socket) do
+    if connected?(socket), do: Timeline.subscribe()
     {:ok, stream(socket, :posts, Timeline.list_posts())}
   end
 
@@ -35,6 +36,11 @@ defmodule ChirpWeb.PostLive.Index do
   @impl true
   def handle_info({ChirpWeb.PostLive.FormComponent, {:saved, post}}, socket) do
     {:noreply, stream_insert(socket, :posts, post)}
+  end
+
+  @impl true
+  def handle_info({:post_created, post}, socket) do
+    {:noreply, update(socket, :posts, fn posts -> [post | @strem.posts] end)}
   end
 
   @impl true
