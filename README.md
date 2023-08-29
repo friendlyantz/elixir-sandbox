@@ -52,18 +52,21 @@ https://github.com/phoenixframework/phoenix_live_view
 
 ## Inline templating HEEX / LEEX. and @ vs assigns
 
-```elixir
-
-# ~H""" - HEEX (preferred, strict, has checks)
+```
+# ~H""" - HEEX (preferred, strict, has checks, need to use '{}' for CSS styles)
+    style={"width: #{@brightness}%"} 
 # ~L""" - LEEX
-# but I was only able to include vaiadles into CSS using LEEX only
-style="width: <%= @brightness %>%;">
+    style="width: <%= @brightness %>%;">
+```
 
+```elixir
 def render(assigns) do
   ~H""" 
-  <div class="container">
-    <%= @brightness %>
-    <%!-- OR assigns.brightness --%>
+  <div class="container"
+    ...
+    style={"width: #{@brightness}%"} >
+      <%= @brightness %>
+      <%!-- OR assigns.brightness --%>
     ...
   </div>
   """

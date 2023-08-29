@@ -4,18 +4,19 @@ defmodule DimmerWeb.LightLive do
   def mount(_params, _session, socket) do
     socket = assign(socket, :brightness, 50)
     IO.inspect(socket)
-    {:ok, socket}
+    {:ok, socket }
   end
 
   def render(assigns) do
     # can be ~L""" for less strict LEEX template
-    ~L"""
+    ~H"""
     <h1>Light</h1>
 
     <div class="w-full bg-gray-200 rounded-full dark:bg-gray-700">
       <div
         class="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full"
-        style="width: <%= @brightness %>%;">
+        style={"width: #{@brightness}%"}
+        >
         <%= @brightness %> %
       </div>
     </div>
