@@ -1,5 +1,6 @@
 elixir projects arranged in subfolders
 - `counter` - Elementrary Counter LiveView Demo. refer readme / Makefile
+- `dimmer` - LiveView Light Dimmer. refer readme / Makefile. Foolowing [YouTube demo](https://www.youtube.com/watch?v=AsyGYpQFiIA)
 - `chirp` - Twitter Clone LiveView Demo. refer readme / Makefile. foolowing [Phoenix LiveView demo](https://www.youtube.com/watch?v=MZvmYaFkNJI)
 - `chat` - LiveView Chat(WIP) with DB. refer readme / Makefile.
 - `pacman` - WIP TDD RyanBigg's Toy Robot book / challange
