@@ -2,7 +2,9 @@ defmodule DimmerWeb.LightLive do
   use DimmerWeb, :live_view
 
   def mount(_params, _session, socket) do
-    {:ok, assign(socket, brightness: 50)}
+    socket = assign(socket, :brightness, 50)
+    IO.inspect(socket)
+    {:ok, socket}
   end
 
   def render(assigns) do

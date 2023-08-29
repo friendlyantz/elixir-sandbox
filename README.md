@@ -71,7 +71,33 @@ end
 
 
 ```
+# Debugging
 
+```elixir
+socket = assign(socket, :brightness, 50)
+IO.inspect(socket)
+```
+
+note `__changed__: %{brightness: true},` below
+
+```sh
+#Phoenix.LiveView.Socket<
+  id: "phx-F3-5vOeaxOOoKB-j",
+  endpoint: DimmerWeb.Endpoint,
+  view: DimmerWeb.LightLive,
+  parent_pid: nil,
+  root_pid: #PID<0.4258.0>,
+  router: DimmerWeb.Router,
+  assigns: %{
+    flash: %{},
+    __changed__: %{brightness: true},
+    live_action: nil,
+    brightness: 50
+  },
+  transport_pid: #PID<0.4249.0>,
+  ...
+>
+```
 # Testing
 
 ```sh
