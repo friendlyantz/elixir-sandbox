@@ -71,9 +71,16 @@ def render(assigns) do
   </div>
   """
 end
-
-
 ```
+
+## Socket
+
+```elixir
+{:noreply, assign(socket, :brightness, socket.assigns.brightness - 10)}
+# alternative approach with update
+{:noreply, update(socket, :brightness, &(&1 + 10))}
+```
+
 # Debugging
 
 ```elixir
